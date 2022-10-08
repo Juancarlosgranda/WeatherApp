@@ -16,8 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.mr.misti.weatherapp.ui.navigation.AppNavigation
 import com.mr.misti.weatherapp.ui.theme.WeatherAppTheme
 import com.mr.misti.weatherapp.ui.theme.book
+import com.mr.misti.weatherapp.ui.theme.gradientPrimary
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,31 +31,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(colorResource(id = R.color.teal_200))
-                            .wrapContentSize(Alignment.Center)
-                    ) {
-                        Greeting("Android")
-                        Text("Android with font", fontFamily = book, color = Color.White)
-
-                    }
+                   AppNavigation()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!",  color = Color.White)
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    WeatherAppTheme {
-        Greeting("Android")
     }
 }

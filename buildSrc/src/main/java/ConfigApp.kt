@@ -22,10 +22,11 @@ object BuildEnvironments {
 
 object Version {
 
-    const val gradlePlugin = "7.2.2"
+    const val gradlePlugin = "7.3.0"
     const val kotlin = "1.7.10"
     const val core = "1.9.0"
     const val compose = "1.2.1"
+    const val navCompose = "2.5.2"
     const val lifecycle = "2.5.1"
     const val activityCompose = "1.6.0"
     const val jUnitTest = "4.13.2"

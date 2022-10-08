@@ -39,6 +39,7 @@ object Dependencies {
     val composeMaterial by lazy { "androidx.compose.material:material:${Version.compose}" }
     val lifecycleRuntime by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Version.lifecycle}" }
     val activityCompose by lazy { "androidx.activity:activity-compose:${Version.activityCompose}" }
+    val navCompose by lazy { "androidx.navigation:navigation-compose:${Version.navCompose}" }
 
     val hiltPlugin by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Version.dagger}" }
     val hilt by lazy { "com.google.dagger:hilt-android:${Version.dagger}" }

@@ -54,6 +54,9 @@ dependencies {
     implementation (Dependencies.composePreview)
     implementation (Dependencies.lifecycleRuntime)
     implementation (Dependencies.activityCompose)
+    implementation(Dependencies.navCompose)
+    implementation("androidx.appcompat:appcompat:1.5.1")
+
     //daggerHilt()
     dagger()
     daggerAndroid()
@@ -61,6 +64,6 @@ dependencies {
     androidTestImplementation (DependenciesTest.junitAndroid)
     androidTestImplementation (DependenciesTest.espresso)
     androidTestImplementation (DependenciesTest.composeJUnitTest)
-    androidTestImplementation (DependenciesTest.composeUiTooling)
+    debugImplementation (DependenciesTest.composeUiTooling)
     androidTestImplementation (DependenciesTest.composeUiManifest)
 }
