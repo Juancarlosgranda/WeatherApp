@@ -10,7 +10,6 @@ import com.mr.misti.location.presentation.ui.state.SearchState
 import com.mr.misti.weather.design.utils.handleUseCaseFailure
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
@@ -25,8 +24,10 @@ class SearchViewModel @Inject constructor(
     val searchQuery = MutableStateFlow("")
 
     init {
-        searchQuery.asSharedFlow().mapLatest {
-            getLocations(it)
+        searchQuery.mapLatest {
+            delay(200)
+            if (it.isNotEmpty()) getLocations(it)
+            else _state.value = _state.value.copy(locations = emptyList())
         }.launchIn(viewModelScope)
     }
 

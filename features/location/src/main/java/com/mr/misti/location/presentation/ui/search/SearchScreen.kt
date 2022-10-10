@@ -43,7 +43,6 @@ fun SearchScreen(
         verticalArrangement = Arrangement.Top
     ) {
         TextFieldSearch { query ->
-            if (query.isNotEmpty())
                 searchViewModel.searchQuery.value = query
         }
         LazyColumn(modifier = Modifier.fillMaxSize()) {
