@@ -73,8 +73,4 @@ object NetworkModule {
     fun provideApiKey(): String {
         return "de5553176da64306b86153651221606"
     }
-
-    /*@Provides
-    @Singleton
-    fun provideApi(retrofit: Retrofit): RestService = retrofit.create(RestService::class.java)*/
 }
