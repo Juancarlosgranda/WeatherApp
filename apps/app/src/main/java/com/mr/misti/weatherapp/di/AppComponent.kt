@@ -1,3 +1,4 @@
+/*
 package com.mr.misti.weatherapp.di
 
 import com.mr.misti.weather.design.di.ViewModelComponent
@@ -22,4 +23,4 @@ interface AppComponent : AndroidInjector<WeatherApp> {
     interface Factory : AndroidInjector.Factory<WeatherApp>
     //fun viewModelComponent(): ViewModelFactoryComponent
 
-}
+}*/

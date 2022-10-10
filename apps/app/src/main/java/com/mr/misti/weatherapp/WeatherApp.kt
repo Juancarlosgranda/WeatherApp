@@ -1,13 +1,7 @@
 package com.mr.misti.weatherapp
 
-import com.mr.misti.weatherapp.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class WeatherApp: DaggerApplication() {
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.factory().create(this)
-    }
-
-}
+@HiltAndroidApp
+class WeatherApp: Application()

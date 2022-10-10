@@ -13,6 +13,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "BaseURL", "\"https://api.weatherapi.com/\"")
     }
 
     buildTypes {
@@ -45,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(Dependencies.core)
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeMaterial)
@@ -56,6 +58,11 @@ dependencies {
     implementation(Dependencies.composeViewModel)
     dagger()
     daggerAndroid()
+    retrofit()
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     testImplementation(DependenciesTest.junit)
     androidTestImplementation(DependenciesTest.junitAndroid)
     androidTestImplementation(DependenciesTest.composeJUnitTest)

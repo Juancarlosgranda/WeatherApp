@@ -2,10 +2,10 @@ package com.mr.misti.location.domain.repository
 
 import com.mr.misti.core.Either
 import com.mr.misti.core.Failure
-import com.mr.misti.location.domain.model.Location
+import com.mr.misti.location_api.domain.Location
 
 interface LocationRepository {
 
-    suspend fun getLocation(): Either<Failure, List<Location>>
+    suspend fun getLocation(query: String): Either<Failure, List<Location>>
 
 }

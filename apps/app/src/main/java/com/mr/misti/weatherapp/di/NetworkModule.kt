@@ -1,3 +1,4 @@
+/*
 package com.mr.misti.weatherapp.di
 
 import android.content.Context
@@ -63,7 +64,9 @@ class NetworkModule {
             .build()
     }
 
-    /*@Provides
+    */
+/*@Provides
     @Singleton
-    fun provideApi(retrofit: Retrofit): RestService = retrofit.create(RestService::class.java)*/
-}
+    fun provideApi(retrofit: Retrofit): RestService = retrofit.create(RestService::class.java)*//*
+
+}*/

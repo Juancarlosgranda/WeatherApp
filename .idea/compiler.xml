@@ -7,6 +7,7 @@
       <module name="WeatherApp.buildSrc.main" target="11" />
       <module name="WeatherApp.buildSrc.test" target="11" />
       <module name="WeatherApp.features.location" target="11" />
+      <module name="WeatherApp.features.location-api" target="11" />
       <module name="WeatherApp.features.weather" target="11" />
       <module name="WeatherApp.weather-design" target="11" />
     </bytecodeTargetLevel>

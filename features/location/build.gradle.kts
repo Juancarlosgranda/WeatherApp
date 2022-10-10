@@ -48,6 +48,7 @@ android {
 dependencies {
     implementation(project(":weather-design"))
     implementation(project(":core"))
+    implementation(project(":features:location-api"))
     implementation(Dependencies.core)
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeMaterial)

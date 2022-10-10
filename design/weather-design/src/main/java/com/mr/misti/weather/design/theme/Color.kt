@@ -12,6 +12,7 @@ val blueLight = Color(0xFF005C97)
 val blueDark = Color(0xFF363795)
 val yellow = Color(0xFFFFB200)
 val yellowDark = Color(0xFFc68300)
+val yellowDarkVariant = Color(0xFFFFB200)
 
 val gradientPrimary = Brush.verticalGradient(0f to blueLight, 1000f to blueDark)
 
