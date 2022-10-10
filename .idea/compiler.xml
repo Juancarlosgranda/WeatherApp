@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="WeatherApp.apps.app" target="11" />
+      <module name="WeatherApp.buildSrc" target="11" />
+      <module name="WeatherApp.buildSrc.main" target="11" />
+      <module name="WeatherApp.buildSrc.test" target="11" />
+      <module name="WeatherApp.features.location" target="11" />
+      <module name="WeatherApp.features.weather" target="11" />
+      <module name="WeatherApp.weather-design" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

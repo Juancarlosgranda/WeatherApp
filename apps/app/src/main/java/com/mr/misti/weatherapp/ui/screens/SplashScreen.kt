@@ -18,17 +18,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.mr.misti.weatherapp.R
-import com.mr.misti.weatherapp.ui.navigation.AppScreens
-import com.mr.misti.weatherapp.ui.theme.bold
-import com.mr.misti.weatherapp.ui.theme.gradientPrimary
+import com.mr.misti.core.navigation.AppScreens
+import com.mr.misti.weather.design.theme.bold
+import com.mr.misti.weather.design.theme.gradientPrimary
 import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(key1 = true) {
-        delay(5000)
+        delay(1000)
         navController.popBackStack()
-        navController.navigate(AppScreens.MainScreen.route)
+        navController.navigate(AppScreens.SearchScreen.route)
     }
     Splash()
 }

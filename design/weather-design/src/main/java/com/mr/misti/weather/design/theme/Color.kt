@@ -1,4 +1,4 @@
-package com.mr.misti.weatherapp.ui.theme
+package com.mr.misti.weather.design.theme
 
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color

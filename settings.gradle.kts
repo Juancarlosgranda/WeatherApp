@@ -19,3 +19,4 @@ project(":weather-design").projectDir = file("./design/weather-design")
 
 include(":features:location")
 include(":features:weather")
+include(":core")

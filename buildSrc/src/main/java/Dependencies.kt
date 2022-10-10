@@ -37,6 +37,8 @@ object Dependencies {
     val composeUi by lazy { "androidx.compose.ui:ui:${Version.compose}" }
     val composePreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.compose}" }
     val composeMaterial by lazy { "androidx.compose.material:material:${Version.compose}" }
+    val composeLifecycle by lazy { "androidx.lifecycle:lifecycle-runtime-compose:${Version.composeLifecycle}" }
+    val composeViewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeViewModel}" }
     val lifecycleRuntime by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Version.lifecycle}" }
     val activityCompose by lazy { "androidx.activity:activity-compose:${Version.activityCompose}" }
     val navCompose by lazy { "androidx.navigation:navigation-compose:${Version.navCompose}" }
@@ -49,6 +51,16 @@ object Dependencies {
     val daggerAndroid by lazy { "com.google.dagger:dagger-android:${Version.dagger}" }
     val daggerSupport by lazy { "com.google.dagger:dagger-android-support:${Version.dagger}" }
     val daggerProcessor by lazy { "com.google.dagger:dagger-android-processor:${Version.dagger}" }
+
+    val retrofit2 by lazy { "com.squareup.retrofit2:retrofit:${Version.retrofit2}" }
+    val retrofit2Converter by lazy { "com.squareup.retrofit2:converter-gson:${Version.retrofit2}" }
+    val interceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Version.okhttp3}" }
+    val gson by lazy { "com.google.code.gson:gson:${Version.gson}" }
+
+    val coroutines by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}" }
+    val coroutinesAndroid by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutines}" }
+
+
 }
 
 object DependenciesTest {
@@ -71,6 +83,13 @@ fun DependencyHandler.dagger() {
 fun DependencyHandler.daggerAndroid() {
     implementation (Dependencies.daggerAndroid)
     annotationProcessor (Dependencies.daggerProcessor)
+}
+
+fun DependencyHandler.retrofit() {
+    implementation (Dependencies.retrofit2)
+    implementation (Dependencies.interceptor)
+    implementation (Dependencies.gson)
+    implementation (Dependencies.retrofit2Converter)
 }
 
 fun DependencyHandler.compose() {

@@ -1,7 +1,7 @@
-package com.mr.misti.weatherapp.ui.navigation
+package com.mr.misti.core.navigation
 
 
 sealed class AppScreens(val route: String) {
     object SplashScreen: AppScreens("splash_screen")
-    object MainScreen: AppScreens("main_screen")
+    object SearchScreen: AppScreens("search_screen")
 }
