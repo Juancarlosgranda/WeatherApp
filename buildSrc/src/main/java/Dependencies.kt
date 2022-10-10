@@ -1,7 +1,6 @@
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
-
     private fun DependencyHandler.implementation(depName: String) {
         add("implementation", depName)
     }
@@ -14,22 +13,9 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
     private fun DependencyHandler.kapt(depName: String) {
         add("kapt", depName)
     }
-    private fun DependencyHandler.annotationProcessor(depName: String) {
-        add("kapt", depName)
-    }
-    private fun DependencyHandler.compileOnly(depName: String) {
-        add("compileOnly", depName)
-    }
     private fun DependencyHandler.api(depName: String) {
         add("api", depName)
     }
-
-/**
- * To define plugins
- */
-object BuildPlugins {
-    val gradleTools by lazy { "com.android.tools.build:gradle:${Version.gradlePlugin}" }
-}
 
 object Dependencies {
 
@@ -45,12 +31,12 @@ object Dependencies {
 
     val hiltPlugin by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Version.dagger}" }
     val hilt by lazy { "com.google.dagger:hilt-android:${Version.dagger}" }
-    val hiltCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Version.dagger}" }
+    val hiltKapt by lazy { "com.google.dagger:hilt-android-compiler:${Version.dagger}" }
+    val hiltNav by lazy { "androidx.hilt:hilt-navigation-compose:${Version.hiltNav}" }
     val dagger by lazy { "com.google.dagger:dagger:${Version.dagger}" }
     val daggerKapt by lazy { "com.google.dagger:dagger-compiler:${Version.dagger}" }
-    val daggerAndroid by lazy { "com.google.dagger:dagger-android:${Version.dagger}" }
-    val daggerSupport by lazy { "com.google.dagger:dagger-android-support:${Version.dagger}" }
-    val daggerProcessor by lazy { "com.google.dagger:dagger-android-processor:${Version.dagger}" }
+    val coilCompose by lazy { "io.coil-kt:coil-compose:${Version.coil}" }
+
 
     val retrofit2 by lazy { "com.squareup.retrofit2:retrofit:${Version.retrofit2}" }
     val retrofit2Converter by lazy { "com.squareup.retrofit2:converter-gson:${Version.retrofit2}" }
@@ -80,9 +66,10 @@ fun DependencyHandler.dagger() {
     implementation (Dependencies.dagger)
     kapt (Dependencies.daggerKapt)
 }
-fun DependencyHandler.daggerAndroid() {
-    implementation (Dependencies.daggerAndroid)
-    annotationProcessor (Dependencies.daggerProcessor)
+fun DependencyHandler.daggerHilt() {
+    implementation (Dependencies.hilt)
+    kapt (Dependencies.hiltKapt)
+    implementation (Dependencies.hiltNav)
 }
 
 fun DependencyHandler.retrofit() {

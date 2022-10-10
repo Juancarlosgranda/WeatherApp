@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.44")
+        classpath(Dependencies.hiltPlugin)
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

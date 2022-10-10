@@ -35,14 +35,12 @@ object Version {
     const val jUnitAndroidTest = "1.1.3"
     const val espressoTest = "3.4.0"
     const val gson = "2.9.0"
-    const val fragment = "2.5.0"
     const val retrofit2 = "2.9.0"
     const val okhttp3 = "4.9.1"
     const val coroutines = "1.6.4"
     const val mockk = "1.11.0"
-    const val safeArgs = "2.5.0"
     const val dagger = "2.44"
-    const val room = "2.4.2"
-    const val coil = "1.4.0"
+    const val hiltNav = "1.0.0"
+    const val coil = "2.2.0"
 
 }

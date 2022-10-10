@@ -3,8 +3,6 @@ package com.mr.misti.weather.presentation.ui.forecast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -91,12 +89,14 @@ fun Forecast(location: String, forecastViewModel: ForecastViewModel) {
                 modifier = Modifier.padding(top = 8.dp)
             )
         }
+        Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = uiState.currentWeather?.condition.orEmpty(),
             color = Color.White,
             fontSize = 32.sp,
             fontFamily = bold,
-            modifier = Modifier.padding(top = 16.dp)
+            textAlign = TextAlign.Center ,
+            modifier = Modifier.padding(horizontal = 24.dp)
         )
         Image(
             painter = rememberAsyncImagePainter(uiState.currentWeather?.iconUrl.orEmpty()),
