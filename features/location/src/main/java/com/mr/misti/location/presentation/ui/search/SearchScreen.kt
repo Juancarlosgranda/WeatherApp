@@ -22,6 +22,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.mr.misti.core.navigation.AppScreens
 import com.mr.misti.location.presentation.ui.state.SearchState
@@ -42,7 +43,8 @@ fun SearchScreen(
         verticalArrangement = Arrangement.Top
     ) {
         TextFieldSearch { query ->
-            if (query.isNotEmpty()) searchViewModel.getLocations(query)
+            if (query.isNotEmpty())
+                searchViewModel.searchQuery.value = query
         }
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(uiState.locations) { location ->

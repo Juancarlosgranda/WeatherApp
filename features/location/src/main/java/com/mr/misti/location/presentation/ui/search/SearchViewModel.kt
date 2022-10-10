@@ -1,6 +1,5 @@
 package com.mr.misti.location.presentation.ui.search
 
-import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -11,8 +10,11 @@ import com.mr.misti.location.presentation.ui.state.SearchState
 import com.mr.misti.weather.design.utils.handleUseCaseFailure
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.ConflatedBroadcastChannel
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class SearchViewModel @Inject constructor(
     private val getLocations: GetLocations
@@ -20,17 +22,23 @@ class SearchViewModel @Inject constructor(
     private val _state = mutableStateOf(SearchState())
     val state: State<SearchState> = _state
 
-    fun getLocations(query: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val result = getLocations.invoke(query)
-            withContext(Dispatchers.Main) {
-                result.either(::handleUseCaseFailureFromBase) {
-                    _state.value = _state.value.copy(locations = it)
-                }
+    val searchQuery = MutableStateFlow("")
+
+    init {
+        searchQuery.asSharedFlow().mapLatest {
+            getLocations(it)
+        }.launchIn(viewModelScope)
+    }
+
+
+    suspend fun getLocations(query: String) {
+        val result = getLocations.invoke(query)
+        withContext(Dispatchers.Main) {
+            result.either(::handleUseCaseFailureFromBase) {
+                _state.value = _state.value.copy(locations = it)
             }
         }
     }
-
 
     private fun handleUseCaseFailureFromBase(failure: Failure) {
         _state.value = _state.value.copy(showMessageError = handleUseCaseFailure(failure))

@@ -126,9 +126,6 @@ fun Forecast(location: String, forecastViewModel: ForecastViewModel) {
             uiState.forecastDays.forEach {
                 ItemForecast(it)
             }
-           /* items(uiState.forecastDays) { forecastDay ->
-                ItemForecast(forecastDay)
-            }*/
         }
         Spacer(modifier = Modifier.height(16.dp))
     }
