@@ -1,7 +1,7 @@
-package com.mr.misti.location_api.data
+package com.mr.misti.weather_api.data
 
 import com.google.gson.annotations.SerializedName
-import com.mr.misti.location_api.domain.Location
+import com.mr.misti.weather_api.domain.Location
 
 data class LocationResponse(
     val name: String?,

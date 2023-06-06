@@ -1,7 +1,7 @@
 package com.mr.misti.weather.presentation.ui.state
 
-import com.mr.misti.location_api.domain.Location
-import com.mr.misti.weather.domain.model.CurrentWeather
+import com.mr.misti.weather_api.domain.Location
+import com.mr.misti.weather_api.domain.CurrentWeather
 import com.mr.misti.weather.presentation.model.ForecastDayModel
 
 data class ForecastState(

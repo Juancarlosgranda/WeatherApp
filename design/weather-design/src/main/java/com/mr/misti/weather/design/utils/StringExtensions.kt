@@ -7,8 +7,8 @@ import java.util.*
 
 @SuppressLint("SimpleDateFormat")
 fun String.convertDateFormat(inputDateFormat: String, outputDateFormat: String): String {
-    val inputDate: SimpleDateFormat = SimpleDateFormat(inputDateFormat)
-    val outputDate: SimpleDateFormat = SimpleDateFormat(outputDateFormat)
+    val inputDate = SimpleDateFormat(inputDateFormat)
+    val outputDate = SimpleDateFormat(outputDateFormat)
     return try {
         val date = inputDate.parse(this)
         date?.let { outputDate.format(date).toString() }.orEmpty()

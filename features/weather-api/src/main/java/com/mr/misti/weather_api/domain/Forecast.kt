@@ -1,6 +1,4 @@
-package com.mr.misti.weather.domain.model
-
-import com.mr.misti.location_api.domain.Location
+package com.mr.misti.weather_api.domain
 
 data class Forecast(
     val location: Location,

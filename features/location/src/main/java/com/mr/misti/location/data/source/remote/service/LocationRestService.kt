@@ -1,6 +1,6 @@
 package com.mr.misti.location.data.source.remote.service
 
-import com.mr.misti.location_api.data.LocationResponse
+import com.mr.misti.weather_api.data.LocationResponse
 import retrofit2.Response
 import retrofit2.http.*
 

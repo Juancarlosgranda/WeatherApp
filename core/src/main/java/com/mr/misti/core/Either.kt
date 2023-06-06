@@ -1,15 +1,6 @@
 package com.mr.misti.core
 
 import com.mr.misti.core.utils.toSuccess
-
-
-/*
- * Created by Christopher Elias on 22/04/2021
- * christopher.mike.96@gmail.com
- *
- * Lima, Peru.
- */
-
 /**
  * Represents a value of one of two possible types (a disjoint union).
  * Instances of [Either] are either an instance of [Error] or [Success].

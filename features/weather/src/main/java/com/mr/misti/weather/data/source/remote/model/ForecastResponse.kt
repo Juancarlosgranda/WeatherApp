@@ -1,11 +1,11 @@
 package com.mr.misti.weather.data.source.remote.model
 
 import com.google.gson.annotations.SerializedName
-import com.mr.misti.location_api.data.LocationResponse
-import com.mr.misti.location_api.data.toDomainModel
-import com.mr.misti.weather.domain.model.CurrentWeather
-import com.mr.misti.weather.domain.model.Forecast
-import com.mr.misti.weather.domain.model.ForecastDay
+import com.mr.misti.weather_api.data.LocationResponse
+import com.mr.misti.weather_api.data.toDomainModel
+import com.mr.misti.weather_api.domain.CurrentWeather
+import com.mr.misti.weather_api.domain.Forecast
+import com.mr.misti.weather_api.domain.ForecastDay
 
 data class ForecastResponse(
     val location: LocationResponse,

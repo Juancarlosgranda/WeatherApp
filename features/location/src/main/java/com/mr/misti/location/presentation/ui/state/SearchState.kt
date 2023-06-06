@@ -1,6 +1,6 @@
 package com.mr.misti.location.presentation.ui.state
 
-import com.mr.misti.location_api.domain.Location
+import com.mr.misti.weather_api.domain.Location
 
 data class SearchState(
     val locations: List<Location> = emptyList(),

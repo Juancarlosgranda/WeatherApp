@@ -18,6 +18,7 @@ import javax.inject.Inject
 class SearchViewModel @Inject constructor(
     private val getLocations: GetLocations
 ) : ViewModel() {
+
     private val _state = mutableStateOf(SearchState())
     val state: State<SearchState> = _state
 
@@ -31,8 +32,7 @@ class SearchViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-
-    suspend fun getLocations(query: String) {
+    private suspend fun getLocations(query: String) {
         val result = getLocations.invoke(query)
         withContext(Dispatchers.Main) {
             result.either(::handleUseCaseFailureFromBase) {

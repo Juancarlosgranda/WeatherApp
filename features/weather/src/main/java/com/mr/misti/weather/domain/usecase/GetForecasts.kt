@@ -2,7 +2,7 @@ package com.mr.misti.weather.domain.usecase
 
 import com.mr.misti.core.Either
 import com.mr.misti.core.Failure
-import com.mr.misti.weather.domain.model.Forecast
+import com.mr.misti.weather_api.domain.Forecast
 import com.mr.misti.weather.domain.repository.ForecastRepository
 import javax.inject.Inject
 

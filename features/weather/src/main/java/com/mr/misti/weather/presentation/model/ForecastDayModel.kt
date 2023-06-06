@@ -2,7 +2,7 @@ package com.mr.misti.weather.presentation.model
 
 import com.mr.misti.weather.design.utils.convertDateFormat
 import com.mr.misti.weather.design.utils.toDate
-import com.mr.misti.weather.domain.model.ForecastDay
+import com.mr.misti.weather_api.domain.ForecastDay
 import java.util.Date
 
 data class ForecastDayModel(

@@ -1,4 +1,4 @@
-package com.mr.misti.location_api.domain
+package com.mr.misti.weather_api.domain
 
 data class Location(
     val city: String,

@@ -2,7 +2,7 @@ package com.mr.misti.location.domain.repository
 
 import com.mr.misti.core.Either
 import com.mr.misti.core.Failure
-import com.mr.misti.location_api.domain.Location
+import com.mr.misti.weather_api.domain.Location
 
 interface LocationRepository {
 

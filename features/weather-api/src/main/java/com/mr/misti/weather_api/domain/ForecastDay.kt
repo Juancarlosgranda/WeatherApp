@@ -1,4 +1,4 @@
-package com.mr.misti.weather.domain.model
+package com.mr.misti.weather_api.domain
 
 data class ForecastDay(
     val date: String,
